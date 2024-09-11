@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.0"
+agp = "8.5.2"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -9,16 +9,16 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.2"
 constraintlayout = "2.1.4"
-lifecycleViewModelKtx="2.8.4"
+lifecycleViewModelKtx="2.8.5"
 coroutines="1.7.3"
-navigationFragmentKtx = "2.7.7"
-navigationUiKtx = "2.7.7"
+navigationFragmentKtx = "2.8.0"
+navigationUiKtx = "2.8.0"
 gson="2.11.0"
 retrofit="2.11.0"
 gsonconverter="2.11.0"
 glide = "4.16.0"
 lottie = "6.5.1"
-safeargs="2.5.3"
+safeargs="2.8.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,10 +38,10 @@ retrofit={group="com.squareup.retrofit2",name="retrofit",version.ref="retrofit"}
 converter-gson={group="com.squareup.retrofit2",name="converter-gson",version.ref="gsonconverter"}
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+squareup-okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version = "4.9.3" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 safe-args-plugin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "safeargs" }
 kotlin-plugin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
-
