@@ -1,11 +1,13 @@
 package com.ahmed.amdbmoviesapp.network
 
 import com.ahmed.amdbmoviesapp.entities.AiringTodayPage
+import com.ahmed.amdbmoviesapp.entities.MovieCreditsResponse
 import com.ahmed.amdbmoviesapp.entities.MovieDetailsPage
 import com.ahmed.amdbmoviesapp.entities.MoviePage
 import com.ahmed.amdbmoviesapp.entities.MovieSearchPage
 import com.ahmed.amdbmoviesapp.entities.MoviesTrailerPage
 import com.ahmed.amdbmoviesapp.entities.OnTheAirTvsPage
+import com.ahmed.amdbmoviesapp.entities.TvCreditsResponse
 import com.ahmed.amdbmoviesapp.entities.TvDetailsPage
 import com.ahmed.amdbmoviesapp.entities.TvPage
 import com.ahmed.amdbmoviesapp.entities.TvSearchPage
@@ -56,6 +58,12 @@ interface TMDbApiService {
 
     @GET("tv/on_the_air")
     fun getOnTheAirSeries(@Query("language") language: String = "en-US", @Query("region") region: String = "US"): Response<OnTheAirTvsPage>
+
+    @GET("movie/{movie_id}/credits")
+    suspend fun getMovieCredits(@Path("movie_id") movieId: Int): Response<MovieCreditsResponse>
+
+    @GET("tv/{tv_id}/credits")
+    suspend fun getTvCredits(@Path("tv_id") movieId: Int): Response<TvCreditsResponse>
 
 
 }

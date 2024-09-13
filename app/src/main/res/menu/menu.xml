@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_explore"
+        android:icon="@drawable/home"
+        app:cnb_iconColor="#166ed3"
+        app:cnb_textColor="#000"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/search"
+        app:cnb_iconColor="#166ed3"
+        app:cnb_textColor="#000"
+        android:title="Search" />
+
+    <item
+        android:id="@+id/nav_saved"
+        android:icon="@drawable/save"
+        app:cnb_iconColor="#166ed3"
+        app:cnb_textColor="#000"
+        android:title="Whatch List" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/user"
+        app:cnb_iconColor="#166ed3"
+        app:cnb_textColor="#000"
+        android:title="Profile" />
+
+</menu>

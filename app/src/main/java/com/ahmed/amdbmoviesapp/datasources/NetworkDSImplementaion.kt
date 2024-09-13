@@ -1,11 +1,13 @@
 package com.ahmed.amdbmoviesapp.datasources
 
 import com.ahmed.amdbmoviesapp.entities.AiringTodayPage
+import com.ahmed.amdbmoviesapp.entities.MovieCreditsResponse
 import com.ahmed.amdbmoviesapp.entities.MovieDetailsPage
 import com.ahmed.amdbmoviesapp.entities.MoviePage
 import com.ahmed.amdbmoviesapp.entities.MovieSearchPage
 import com.ahmed.amdbmoviesapp.entities.MoviesTrailerPage
 import com.ahmed.amdbmoviesapp.entities.OnTheAirTvsPage
+import com.ahmed.amdbmoviesapp.entities.TvCreditsResponse
 import com.ahmed.amdbmoviesapp.entities.TvDetailsPage
 import com.ahmed.amdbmoviesapp.entities.TvPage
 import com.ahmed.amdbmoviesapp.entities.TvSearchPage
@@ -66,6 +68,13 @@ object NetworkDSImplementaion : NetworkDataSource {
         return RetrofitClient.retrofitService.getOnTheAirSeries("en-US", "US")
     }
 
+    override suspend fun getMovieCredits(movieId: Int): Response<MovieCreditsResponse> {
+        return RetrofitClient.retrofitService.getMovieCredits(movieId)
+    }
+
+    override suspend fun getTvCredits(tvId: Int): Response<TvCreditsResponse> {
+        return RetrofitClient.retrofitService.getTvCredits(tvId)
+    }
 
 
 

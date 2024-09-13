@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/roote_layout"
+    android:layout_width="match_parent"
+    android:background="@drawable/poster"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SplashFragment">
+
+    <TextView
+        android:id="@+id/sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="44dp"
+        android:fontFamily="@font/anton"
+        android:text="SYNC"
+        android:textColor="#0078ff"
+        android:textSize="120dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/stream"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="276dp"
+        android:background="#000000"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/anton"
+        android:includeFontPadding="false"
+        android:letterSpacing=".1"
+        android:lineSpacingExtra="0dp"
+        android:padding="0dp"
+        android:rotation="-90"
+        android:text="STREAM"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

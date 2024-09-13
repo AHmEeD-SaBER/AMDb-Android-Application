@@ -1,11 +1,13 @@
 package com.ahmed.amdbmoviesapp.datasources
 
 import com.ahmed.amdbmoviesapp.entities.AiringTodayPage
+import com.ahmed.amdbmoviesapp.entities.MovieCreditsResponse
 import com.ahmed.amdbmoviesapp.entities.MovieDetailsPage
 import com.ahmed.amdbmoviesapp.entities.MoviePage
 import com.ahmed.amdbmoviesapp.entities.MovieSearchPage
 import com.ahmed.amdbmoviesapp.entities.MoviesTrailerPage
 import com.ahmed.amdbmoviesapp.entities.OnTheAirTvsPage
+import com.ahmed.amdbmoviesapp.entities.TvCreditsResponse
 import com.ahmed.amdbmoviesapp.entities.TvDetailsPage
 import com.ahmed.amdbmoviesapp.entities.TvPage
 import com.ahmed.amdbmoviesapp.entities.TvSearchPage
@@ -27,4 +29,6 @@ interface NetworkDataSource {
     suspend fun getUpcomingMovies() : Response<UpComingMoviesPage>
     suspend fun getAiringTodaySeries() : Response<AiringTodayPage>
     suspend fun getOnTheAirSeries() : Response<OnTheAirTvsPage>
+    suspend fun getMovieCredits(movieId: Int) : Response<MovieCreditsResponse>
+    suspend fun getTvCredits(tvId: Int) : Response<TvCreditsResponse>
 }

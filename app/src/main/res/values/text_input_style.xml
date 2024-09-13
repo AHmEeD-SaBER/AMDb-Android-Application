@@ -1,0 +1,15 @@
+<resources>
+    <style name="TextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!-- Outline attributes -->
+        <item name="boxStrokeColor">@color/colorOnSurface</item>
+
+        <!-- End icon tint -->
+        <item name="endIconTint">@color/colorPrimary</item>
+
+        <!-- Optional: Customize box corner radius -->
+        <item name="boxCornerRadiusBottomEnd">30dp</item>
+        <item name="boxCornerRadiusBottomStart">30dp</item>
+        <item name="boxCornerRadiusTopEnd">30dp</item>
+        <item name="boxCornerRadiusTopStart">30dp</item>
+    </style>
+</resources>

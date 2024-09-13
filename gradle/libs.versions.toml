@@ -19,6 +19,9 @@ gsonconverter="2.11.0"
 glide = "4.16.0"
 lottie = "6.5.1"
 safeargs="2.8.0"
+googleGmsGoogleServices = "4.4.2"
+firebaseAuth = "23.0.0"
+firebaseFirestoreKtx = "25.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,9 +42,13 @@ converter-gson={group="com.squareup.retrofit2",name="converter-gson",version.ref
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 squareup-okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version = "4.9.3" }
+chip-navigation-bar = { group = "com.github.ismaeldivita", name = "chip-navigation-bar", version = "1.4.0" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 safe-args-plugin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "safeargs" }
 kotlin-plugin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }

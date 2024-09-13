@@ -16,4 +16,6 @@ class RepositoryImplementation(val networkDataSource: NetworkDataSource) : Repos
     override suspend fun getUpcomingMovies() = networkDataSource.getUpcomingMovies()
     override suspend fun getAiringTodaySeries() = networkDataSource.getAiringTodaySeries()
     override suspend fun getOnTheAirSeries() = networkDataSource.getOnTheAirSeries()
+    override suspend fun getMovieCredits(movieId: Int) = networkDataSource.getMovieCredits(movieId)
+    override suspend fun getTvCredits(tvId: Int) = networkDataSource.getTvCredits(tvId)
 }
