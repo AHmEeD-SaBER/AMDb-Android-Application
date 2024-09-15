@@ -1,8 +1,11 @@
 package com.ahmed.amdbmoviesapp.activities
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.WindowInsets
+import android.view.WindowInsetsController
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -21,6 +24,8 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+
         var menu_bottom = findViewById<ChipNavigationBar>(R.id.bottom_nav_bar)
         menu_bottom.setItemSelected(R.id.nav_explore)
 
@@ -28,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
             when (it) {
 
                 R.id.nav_explore -> {
-                    findNavController(R.id.nav_host_home).navigate(R.id.welcomeFragment)
+                    findNavController(R.id.nav_host_home).navigate(R.id.homeFragment)
                 }
                 R.id.nav_search -> {
                     findNavController(R.id.nav_host_home).navigate(R.id.detailsFragment)

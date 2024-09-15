@@ -1,5 +1,7 @@
 package com.ahmed.amdbmoviesapp.entities
 
+
+
 data class LastEpisodeToAir(
     val air_date: String,
     val episode_number: Int,
@@ -12,6 +14,6 @@ data class LastEpisodeToAir(
     val season_number: Int,
     val show_id: Int,
     val still_path: Any,
-    val vote_average: Int,
+    val vote_average: Float,
     val vote_count: Int
 )

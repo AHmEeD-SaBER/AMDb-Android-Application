@@ -22,6 +22,9 @@ safeargs="2.8.0"
 googleGmsGoogleServices = "4.4.2"
 firebaseAuth = "23.0.0"
 firebaseFirestoreKtx = "25.1.0"
+firebaseDatabase = "21.0.0"
+circleimageview = "3.1.0"
+emoji = "1.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -41,10 +44,13 @@ retrofit={group="com.squareup.retrofit2",name="retrofit",version.ref="retrofit"}
 converter-gson={group="com.squareup.retrofit2",name="converter-gson",version.ref="gsonconverter"}
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
-squareup-okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version = "4.9.3" }
 chip-navigation-bar = { group = "com.github.ismaeldivita", name = "chip-navigation-bar", version = "1.4.0" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+circleimageview = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleimageview" }
+androidx-emoji = { group = "androidx.emoji", name = "emoji", version.ref = "emoji" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -1,33 +1,42 @@
 package com.ahmed.amdbmoviesapp.fragments
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.emoji.widget.EmojiTextView
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.ahmed.amdbmoviesapp.R
+import com.ahmed.amdbmoviesapp.datasources.NetworkDSImplementaion
+import com.ahmed.amdbmoviesapp.repository.RepositoryImplementation
+import com.ahmed.amdbmoviesapp.viewmodels.DetailsViewModel
+import com.ahmed.amdbmoviesapp.viewmodlefactories.DetailsViewModelFactory
+import com.bumptech.glide.Glide
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [DetailsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class DetailsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var mainPoster: ImageView
+    private lateinit var posterName: TextView
+    private lateinit var genreTv: TextView
+    private lateinit var watchBtn: EmojiTextView
+    private lateinit var detailsRateIcon: EmojiTextView
+    private lateinit var imdbConst: TextView
+    private lateinit var detailsRating: TextView
+    private lateinit var detailsDurationIcon: EmojiTextView
+    private lateinit var durationConst: TextView
+    private lateinit var detailsDuration: TextView
+    private lateinit var overViewTv: TextView
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var button2: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -38,23 +47,71 @@ class DetailsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_details, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DetailsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DetailsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    @RequiresApi(Build.VERSION_CODES.Q)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val movieId = arguments?.getInt("movieId")
+        val tvId = arguments?.getInt("tvId")
+
+        val viewModelFactory = DetailsViewModelFactory(RepositoryImplementation(NetworkDSImplementaion))
+        val viewModel = ViewModelProvider(this, viewModelFactory).get(DetailsViewModel::class.java)
+        mainPoster = view.findViewById(R.id.main_poster)
+        posterName = view.findViewById(R.id.poster_name)
+        genreTv = view.findViewById(R.id.genreTv)
+        detailsRating = view.findViewById(R.id.details_rating)
+        detailsDuration = view.findViewById(R.id.details_duration)
+        overViewTv = view.findViewById(R.id.overViewTv)
+
+        var name: String
+        var type: String
+        var rate : String
+        var overview: String
+        var poster: String
+        var duration: String
+
+        if (movieId != -1) {
+            viewModel.getMovieDetails(movieId!!)
+            viewModel.movie.observe(viewLifecycleOwner) {
+                name = it.title
+                type = "Movie"
+                rate = String.format("%.1f", it.vote_average) + "/10"
+                overview = it.overview
+                poster = "https://image.tmdb.org/t/p/w500${it.poster_path}"
+                duration = it.runtime.toString() +" min"
+
+                Glide.with(mainPoster.context).load(poster).into(mainPoster)
+                posterName.text = name
+                genreTv.text = type
+                detailsRating.text = rate
+                overViewTv.text = overview
+                detailsDuration.text = duration
             }
+
+        } else {
+            viewModel.getTvDetails(tvId!!)
+            viewModel.tv.observe(viewLifecycleOwner) {
+                name = it.name
+                type = "TV"
+                rate = String.format("%.1f", it.vote_average) + "/10"
+                overview = it.overview
+                poster = "https://image.tmdb.org/t/p/w500${it.poster_path}"
+                duration = it.episode_run_time.toString() + " min"
+
+                Glide.with(mainPoster.context).load(poster).into(mainPoster)
+                posterName.text = name
+                genreTv.text = type
+                detailsRating.text = rate
+                overViewTv.text = overview
+                detailsDuration.text = duration
+            }
+
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        // Restore status bar visibility when fragment is destroyed
+        requireActivity().window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
     }
 }

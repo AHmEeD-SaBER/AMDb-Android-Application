@@ -9,6 +9,8 @@
     <color name="colorSecondary">#000000</color>
     <color name="colorSecondaryVariant">#333333</color>
     <color name="colorOnSecondary">#ffffff</color>
+    <color name="gray_dark">#333333</color>
+    <color name="statusBarColor">#fff</color>
 
     <!-- Background and Surface -->
     <color name="colorBackground">#ffffff</color>

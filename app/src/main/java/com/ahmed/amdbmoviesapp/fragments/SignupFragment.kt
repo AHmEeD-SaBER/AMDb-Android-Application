@@ -2,6 +2,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -77,6 +78,7 @@ class SignupFragment : Fragment() {
                 if (task.isSuccessful) {
                     val userId = auth.currentUser?.uid
                     if (userId != null) {
+                        Toast.makeText(requireContext(), "Signup successful!", Toast.LENGTH_SHORT).show()
                         saveUserDetails(userId, email, phone, name)
                     } else {
                         Toast.makeText(requireContext(), "Signup failed: Unable to get user ID", Toast.LENGTH_SHORT).show()
@@ -92,6 +94,7 @@ class SignupFragment : Fragment() {
     }
 
     private fun saveUserDetails(userId: String, email: String, phone: String, name: String) {
+        Log.d("asd","Hello")
         val userMap = hashMapOf(
             "email" to email,
             "phone" to phone,
@@ -102,6 +105,7 @@ class SignupFragment : Fragment() {
             .set(userMap)
             .addOnSuccessListener {
                 Toast.makeText(requireContext(), "Signup successful!", Toast.LENGTH_SHORT).show()
+                Log.d("asd","Hello")
                 val editor = sharedPreferences.edit()
                 editor.putString("userId", userId)
                 editor.putString("userName", name)

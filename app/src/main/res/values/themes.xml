@@ -6,15 +6,11 @@
     </style>
 
     <style name="Theme.AMDbMoviesApp" parent="Base.Theme.AMDbMoviesApp" >
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
         <!-- Primary branding colors -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="android:statusBarColor">@color/statusBarColor</item>
 
         <!-- Secondary branding colors -->
         <item name="colorSecondary">@color/colorSecondary</item>

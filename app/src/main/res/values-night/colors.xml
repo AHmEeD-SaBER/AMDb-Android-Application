@@ -9,6 +9,7 @@
     <color name="colorSecondary">#ffffff</color>
     <color name="colorSecondaryVariant">#cccccc</color>
     <color name="colorOnSecondary">#000000</color>
+    <color name="statusBarColor">#000000</color>
 
     <!-- Background and Surface -->
     <color name="colorBackground">#000000</color>

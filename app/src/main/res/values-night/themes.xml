@@ -10,6 +10,7 @@
         <item name="colorSecondary">#ffffff</item>
         <item name="colorSecondaryVariant">#cccccc</item>
         <item name="colorOnSecondary">#000000</item>
+        <item name="android:statusBarColor">@color/statusBarColor</item>
 
         <!-- Background and Surface colors -->
         <item name="colorSurface">#333333</item>
